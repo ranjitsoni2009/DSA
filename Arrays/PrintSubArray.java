@@ -20,6 +20,24 @@ public class PrintSubArray {
      *  Inner loop [line no.-26] will generate all subarray's start & end index for each index in array
      *      for example :- startIndex = 0  then all subarray would [0,0], [0,1], [0,2] where startIndex is constant and endIndex in increasing
      *      Passing startIndex and endIndex tp print the element tp printSubarray function
+     * 
+     * Time Complexity :- Let's say Array length denoted by 'N'
+     *  Outer loop will execute from 0 to N-1, then loop will execute N times
+     *  Inner loop will execute N(N+1)/2, explained below
+     *      For Index 0, loop will execute N times
+     *      For Index 1, loop will execute N-1 times
+     *      .
+     *      .
+     *      For Index N-1, look will execute 1 times
+     *      so Inner loop executing 1, 2,...N times which is natural number and sum of natrual number is 'N(N+1)/2'
+     *  Since These are nested loop then N*N*(N+1)/2 --> (N^3)/2 + N^2/2
+     *  As per Big Oh rules, remove lower terms and Constant cofficient
+     *  then Time Complexity :: O(N^3)
+     * 
+     * Space Complexity :-
+     *  Input and Output are not considered for calculation
+     *  startIndex and endIndex are extra integer variable, which will take constant space irrespective of input
+     *  then Space Complexity :: O(1)
      * @param array
      */
     void printSubArrayElement(int[] array) {
