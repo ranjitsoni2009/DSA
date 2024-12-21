@@ -14,8 +14,10 @@ package DSA.Arrays;
  *  | [1,2]    | 5   |
  *  | [2,2]    | 3   | 
  *   ----------------
+ * 
+ * Note:- PrintSubArraySumSolution3 is Optimzed approach in terms of Time and Space Complexity both becuase it it using Carry Forward Technique so no need to use extra space for prefix sum calculation.
  */
-class PrintSubArraySum {
+public class PrintSubArraySumSolution3 {
 
     /**
      * Observation :- 
@@ -26,23 +28,25 @@ class PrintSubArraySum {
      *  now for all subarray for index 2 :: [startIndex, endIndex] = [2,2]
      * 
      * Logic Explanation :-
-     *  Outer loop [line no.-25] will iterate for each like 0,1,2.....arrayLenght-1
-     *  Inner loop [line no.-26] will generate all subarray's start & end index for each index in array
+     *  let's say N = array.length, just for explanation
+     *  Outer loop [line no.-60] will iterate for each index from '0' to 'N-1' 
+     *  Inner loop [line no.-61] will iterate for each index from '0' to 'N-1' [i.e. N time]  
      *      for example :- startIndex = 0  then all subarray would [0,0], [0,1], [0,2] where startIndex is constant and endIndex in increasing
-     *      Passing startIndex and endIndex to print sum of all elemento to printSubArraySum function
+     *      For each itertation, carrying sum of last ietration, which avoiding re-iteration requirement and calucalting sum in constant time.
      * 
      * Time Complexity :- Let's say Array length denoted by 'N'
-     *  Outer loop will execute from 0 to N-1, then loop will execute N times
-     *  Inner loop will execute N(N+1)/2, explained below
+     *  Outer loop will execute from 0 to N-1, then loop will execute N times ------------------------------------> Time Complexity is 'N'
+     *  Inner loop will execute from 0 to N-1 and execute constant time operation, explained below ---------------> Time Complexity is 'N'
      *      For Index 0, loop will execute N times
      *      For Index 1, loop will execute N-1 times
      *      .
      *      .
      *      For Index N-1, look will execute 1 times
-     *      so Inner loop executing 1, 2,...N times which is natural number and sum of natrual number is 'N(N+1)/2'
-     *  Since These are nested loop then N*N*(N+1)/2 --> (N^3)/2 + N^2/2
+     *      so from 0 to N-1, if you sum all number of itertaion, it will be N time
+     *       
+     *  Since These are nested loop then N*N --> N^2
      *  As per Big Oh rules, remove lower terms and Constant cofficient
-     *  then Time Complexity :: O(N^3)
+     *  then Time Complexity :: O(N^2)
      * 
      * Space Complexity :-
      *  Input and Output are not considered for calculation
@@ -51,24 +55,13 @@ class PrintSubArraySum {
      * @param array
      */
     void printSubArrayElementSum(int[] array) {
+
         for (int startIndex = 0; startIndex <= array.length-1; ++startIndex) {     
+            int sumOfSubArray = 0;
             for (int endIndex = startIndex; endIndex <= array.length-1; ++endIndex) { 
-                printSubArraySum(startIndex, endIndex, array);
+                sumOfSubArray += array[endIndex];
+                System.out.println(String.format("Sum of [%d,%d] is %d-->", startIndex, endIndex, sumOfSubArray));
             }
         }
-    }
-
-    /**
-     * @description printSubArraySum function will print sum of all the element from startIndex to endIndex from array
-     * @param startIndex
-     * @param endIndex
-     * @param array
-     */
-    void printSubArraySum(int startIndex, int endIndex, int[] array) {
-        int sum = 0 ;
-        for (int index = startIndex; index <= endIndex; ++index) {
-            sum += array[index];
-        }
-        System.out.println(String.format("Sum of SubArray [%d, %d] is %d", startIndex, endIndex, sum));
     }
 }
