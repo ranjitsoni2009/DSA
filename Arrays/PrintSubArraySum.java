@@ -1,9 +1,19 @@
 package DSA.Arrays;
 
 /**
- * Problem Statement - Print the element of all subarray for the given array.
+ * Problem Statement - Print the sum of of all subarray for the given array.
  * Example :- let's say there is array [1,2,3], where index would be from 0 to arrayLength-1.
- * so possible subarray would be [0,0], [0,1], [0,2], [1,1], [1,2], [2,2]
+ * so possible subarray and their sum would be [0,0] and 1, [0,1] and 3, [0,2] and , [1,1], [1,2], [2,2]
+ *   ________________
+ *  | Subarray | Sum |
+ *   ----------------
+ *  | [0,0]    | 1   | 
+ *  | [0,1]    | 3   | 
+ *  | [0,2]    | 6   |
+ *  | [1,1]    | 2   |
+ *  | [1,2]    | 5   |
+ *  | [2,2]    | 3   | 
+ *   ----------------
  */
 class PrintSubArraySum {
 
