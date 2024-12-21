@@ -5,7 +5,7 @@ package DSA.Arrays;
  * Example :- let's say there is array [1,2,3], where index would be from 0 to arrayLength-1.
  * so possible subarray would be [0,0], [0,1], [0,2], [1,1], [1,2], [2,2]
  */
-public class PrintSubArrayElement {
+public class PrintSubArray {
 
     /**
      * Observation :- 
