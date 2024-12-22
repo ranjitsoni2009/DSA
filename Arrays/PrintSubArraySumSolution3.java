@@ -15,7 +15,7 @@ package DSA.Arrays;
  *  | [2,2]    | 3   | 
  *   ----------------
  * 
- * Note:- PrintSubArraySumSolution3 is Optimzed approach in terms of Time and Space Complexity both becuase it it using Carry Forward Technique so no need to use extra space for prefix sum calculation.
+ * Note:- PrintSubArraySumSolution3 is Optimized approach in terms of Time and Space Complexity both becuase it it using Carry Forward Technique so no need to use extra space for prefix sum calculation.
  */
 public class PrintSubArraySumSolution3 {
 
@@ -32,7 +32,7 @@ public class PrintSubArraySumSolution3 {
      *  Outer loop [line no.-60] will iterate for each index from '0' to 'N-1' 
      *  Inner loop [line no.-61] will iterate for each index from '0' to 'N-1' [i.e. N time]  
      *      for example :- startIndex = 0  then all subarray would [0,0], [0,1], [0,2] where startIndex is constant and endIndex in increasing
-     *      For each itertation, carrying sum of last ietration, which avoiding re-iteration requirement and calucalting sum in constant time.
+     *      For each itertation, carrying sum of last iteration, which avoiding re-iteration requirement and "calculating sum in constant time".
      * 
      * Time Complexity :- Let's say Array length denoted by 'N'
      *  Outer loop will execute from 0 to N-1, then loop will execute N times ------------------------------------> Time Complexity is 'N'
