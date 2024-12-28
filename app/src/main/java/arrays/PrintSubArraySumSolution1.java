@@ -17,7 +17,7 @@ package arrays;
  * <p>
  * Note:- This is brute force solution., printSubArraySumSolution2 is better solution.
  */
-public class printSubArraySumSolution1 {
+public class PrintSubArraySumSolution1 {
 
     /**
      * Observation :- 

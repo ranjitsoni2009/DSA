@@ -60,7 +60,7 @@ public class PrintSubArraySumSolution3 {
             int sumOfsubArray = 0;
             for (int endIndex = startIndex; endIndex <= array.length-1; ++endIndex) { 
                 sumOfsubArray += array[endIndex];
-                System.out.println(String.format("Sum of [%d,%d] is %d-->", startIndex, endIndex, sumOfsubArray));
+                System.out.printf("Sum of [%d,%d] is %d-->%n", startIndex, endIndex, sumOfsubArray);
             }
         }
     }
