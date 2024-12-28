@@ -1,6 +1,7 @@
 package arrays;
 
 /**
+ * Approach :- Brute Force
  * Problem Statement :- Write a program to rotate Array anti-clockwise based on given numberOfRotation.
  *    Anti-Clockwise rotation means, every element from start index will move to its left side by numberOfRotation
  *    and in the same manner element from first index would be added at the end of array.

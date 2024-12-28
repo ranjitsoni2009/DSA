@@ -1,6 +1,7 @@
 package arrays;
 
 /**
+ * Approach :- Carry Forward Technique
  * Problem Statement - Print the sum of all subArray for the given array.
  * Example :- let's say there is array [1,2,3], where index would be from 0 to arrayLength-1.
  * so possible subArray and their sum would be [0,0] and 1, [0,1] and 3, [0,2] and , [1,1], [1,2], [2,2]
@@ -15,7 +16,8 @@ package arrays;
  *  | [2,2]    | 3   | 
  *   ----------------
  * <p>
- * Note:- PrintSubArraySumSolution3 is Optimized approach in terms of Time and Space Complexity both becuase it it using Carry Forward Technique so no need to use extra space for prefix sum calculation.
+ * Note:- PrintSubArraySumSolution3 is Optimized approach in terms of Time and Space Complexity both
+ *      because it is using Carry Forward Technique so no need to use extra space for prefix sum calculation.
  */
 public class PrintSubArraySumSolution3 {
 

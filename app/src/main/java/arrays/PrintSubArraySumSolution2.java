@@ -1,6 +1,7 @@
 package arrays;
 
 /**
+ * Approach :-  Prefix Sum Technique
  * Problem Statement - Print the sum of all subArray for the given array.
  * Example :- let's say there is array [1,2,3], where index would be from 0 to arrayLength-1.
  * so possible subArray and their sum would be [0,0] and 1, [0,1] and 3, [0,2] and , [1,1], [1,2], [2,2]
@@ -55,9 +56,13 @@ public class PrintSubArraySumSolution2 {
      *  N space is taken for prefix sum which is dependent on input array length
      *  startIndex, endIndex and sum are extra integer variable, which will take constant space irrespective of input
      *  then Space Complexity :: O(N)
+     *
      * @param array The array for which subArray sum needs to be calculated.
      */
     void printSubArrayElementSum(int[] array) {
+        if (array == null || array.length == 0) {
+            return;
+        }
 
         /* get prefix sum - As a best practice existing array should not be modified */
         int[] prefixSumArray = getPrefixSumArray(array);
