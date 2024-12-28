@@ -1,11 +1,11 @@
-package DSA.Arrays;
+package arrays;
 
 /**
- * Problem Statement - Print the sum of of all subarray for the given array.
+ * Problem Statement - Print the sum of of all subArray for the given array.
  * Example :- let's say there is array [1,2,3], where index would be from 0 to arrayLength-1.
- * so possible subarray and their sum would be [0,0] and 1, [0,1] and 3, [0,2] and , [1,1], [1,2], [2,2]
+ * so possible subArray and their sum would be [0,0] and 1, [0,1] and 3, [0,2] and , [1,1], [1,2], [2,2]
  *   ________________
- *  | Subarray | Sum |
+ *  | subArray | Sum |
  *   ----------------
  *  | [0,0]    | 1   | 
  *  | [0,1]    | 3   | 
@@ -14,24 +14,24 @@ package DSA.Arrays;
  *  | [1,2]    | 5   |
  *  | [2,2]    | 3   | 
  *   ----------------
- * 
- * Note:- This is brute force solution., PrintSubArraySumSolution2 is better solution.
+ * <p>
+ * Note:- This is brute force solution., printSubArraySumSolution2 is better solution.
  */
-class PrintSubArraySumSolution1 {
+class printSubArraySumSolution1 {
 
     /**
      * Observation :- 
-     *  In array, each index is start index of its subarray, that means we have to consider each index one by one to get its subarray i.e. startIndex '0' to endIndex 'arrayLength-1'
+     *  In array, each index is start index of its subArray, that means we have to consider each index one by one to get its subArray i.e. startIndex '0' to endIndex 'arrayLength-1'
      *  so first loop will go from 0 to arrayLength-1
-     *  now for all subarray for index 0 :: [startIndex, endIndex] = [0,0], [0,1], [0,2]
-     *  now for all subarray for index 1 :: [startIndex, endIndex] = [1,1], [1,2]
-     *  now for all subarray for index 2 :: [startIndex, endIndex] = [2,2]
+     *  now for all subArray for index 0 :: [startIndex, endIndex] = [0,0], [0,1], [0,2]
+     *  now for all subArray for index 1 :: [startIndex, endIndex] = [1,1], [1,2]
+     *  now for all subArray for index 2 :: [startIndex, endIndex] = [2,2]
      * 
      * Logic Explanation :-
      *  Outer loop [line no.-25] will iterate for each like 0,1,2.....arrayLenght-1
-     *  Inner loop [line no.-26] will generate all subarray's start & end index for each index in array
-     *      for example :- startIndex = 0  then all subarray would [0,0], [0,1], [0,2] where startIndex is constant and endIndex in increasing
-     *      Passing startIndex and endIndex to print sum of all elemento to printSubArraySum function
+     *  Inner loop [line no.-26] will generate all subArray's start & end index for each index in array
+     *      for example :- startIndex = 0  then all subArray would [0,0], [0,1], [0,2] where startIndex is constant and endIndex in increasing
+     *      Passing startIndex and endIndex to print sum of all element to printSubArraySum function
      * 
      * Time Complexity :- Let's say Array length denoted by 'N'
      *  Outer loop will execute from 0 to N-1, then loop will execute N times --------------------------------------------------------------> Time Complexity is 'N'
@@ -41,17 +41,17 @@ class PrintSubArraySumSolution1 {
      *      .
      *      .
      *      For Index N-1, look will execute 1 times and will pass start and endIndex like [N-1,N-1] to printSubArraySum
-     *      so Inner loop executing 1, 2,...N times which is natural number and sum of natrual number is 'N(N+1)/2'
+     *      so Inner loop executing 1, 2,...N times which is natural number and sum of natural number is 'N(N+1)/2'
      *  printSubArraySum execute loop based in start to end index --------------------------------------------------------------------------> Time Complexity is 'N(N+1)/2'
      *  Since These are nested loop then N*N*(N+1)/2 --> (N^3)/2 + N^2/2
-     *  As per Big Oh rules, remove lower terms and Constant cofficient
+     *  As per Big Oh rules, remove lower terms and Constant coefficient
      *  then Time Complexity :: O(N^3)
-     * 
+     * <p>
      * Space Complexity :-
      *  Input and Output are not considered for calculation
      *  startIndex, endIndex and sum are extra integer variable, which will take constant space irrespective of input
      *  then Space Complexity :: O(1)
-     * @param array
+     * @param array The array for which subArray sum needs to be calculated.
      */
     void printSubArrayElementSum(int[] array) {
         for (int startIndex = 0; startIndex <= array.length-1; ++startIndex) {     
@@ -63,15 +63,15 @@ class PrintSubArraySumSolution1 {
 
     /**
      * @description printSubArraySum function will print sum of all the element from startIndex to endIndex from array
-     * @param startIndex
-     * @param endIndex
-     * @param array
+     * @param startIndex start index of array
+     * @param endIndex end index of array
+     * @param array The array for which subArray sum needs to be calculated.
      */
     void printSubArraySum(int startIndex, int endIndex, int[] array) {
         int sum = 0 ;
         for (int index = startIndex; index <= endIndex; ++index) {
             sum += array[index];
         }
-        System.out.println(String.format("Sum of SubArray [%d, %d] is %d", startIndex, endIndex, sum));
+        System.out.printf("Sum of subArray [%d, %d] is %d%n", startIndex, endIndex, sum);
     }
 }

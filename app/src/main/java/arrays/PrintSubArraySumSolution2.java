@@ -1,4 +1,4 @@
-package DSA.Arrays;
+package arrays;
 
 /**
  * Problem Statement - Print the sum of of all subarray for the given array.

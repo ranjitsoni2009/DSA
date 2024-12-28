@@ -1,4 +1,4 @@
-package DSA.Arrays;
+package arrays;
 
 /**
  * Problem Statement - Print the element of all subarray for the given array.
