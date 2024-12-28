@@ -16,8 +16,9 @@ public class RotateArrayAntiClockWiseSolution1 {
      * 1. If the number of rotations is greater than the length of the array, reduce it by taking modulo with the array length.
      * 2. For each rotation, store the first element in a temporary variable.
      * 3. Shift all elements to the left by one position.
-     * 4. Place the temporary variable at the end of the array.
+     * 4. Place the temporary variable value at the end of the array.
      * 5. Repeat the above steps for the given number of rotations.
+     *
      * <p>
      * Time Complexity:
      * The outer loop runs for 'numberOfRotation' times.

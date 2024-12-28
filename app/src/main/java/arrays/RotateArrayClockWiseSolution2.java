@@ -13,6 +13,8 @@ import java.util.ArrayList;
  * Example:
  *      Input: array = [1, 2, 3, 4, 5], numberOfRotation = 2
  *      Output: [4, 5, 1, 2, 3]
+ * <p>
+ * Note:- This is optimized solution, RotateArrayClockWiseSolution1 is brute force solution.
  */
 public class RotateArrayClockWiseSolution2 {
 
@@ -44,7 +46,6 @@ public class RotateArrayClockWiseSolution2 {
      * Space Complexity:-
      * 1. The space complexity is O(1) as we are using a constant amount of extra space.
      * <p>
-     * Note:- This is optimized solution, RotateArrayClockWiseSolution1 is brute force solution.
      * 
      * @param arrayList The array to be rotated.
      * @param numberOfRotation The number of rotations to be performed.

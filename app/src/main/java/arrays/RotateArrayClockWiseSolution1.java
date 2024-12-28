@@ -10,6 +10,7 @@ import org.apache.commons.collections4.CollectionUtils;
  * Example:
  *      Input: array = [1, 2, 3, 4, 5], numberOfRotation = 2
  *      Output: [4, 5, 1, 2, 3]
+ * Note :- This is brute force solution, RotateArrayClockWiseSolution2 is better solution.
  */
 public class RotateArrayClockWiseSolution1 {
 
@@ -30,7 +31,6 @@ public class RotateArrayClockWiseSolution1 {
      * Space Complexity:
      *      The space complexity is O(1) as we are using a constant amount of extra space.
      * <p>
-     * Note :- This is brute force solution, RotateArrayClockWiseOptimized is better solution.
      * 
      * @param array The array to be rotated.
      * @param numberOfRotation The number of rotations to be performed.
