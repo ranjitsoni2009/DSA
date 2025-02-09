@@ -44,10 +44,10 @@ public class PrintSubArraySumSolution3 {
      *      .
      *      .
      *      For Index N-1, look will execute 1 times
-     *      so from 0 to N-1, if you sum all number of itertaion, it will be N time
+     *      so from 0 to N-1, if you sum all number of iteration, it will be N time
      * <p>
      *  Since These are nested loop then N*N --> N^2
-     *  As per Big Oh rules, remove lower terms and Constant cofficient
+     *  As per Big Oh rules, remove lower terms and Constant coefficient
      *  then Time Complexity :: O(N^2)
      * <p>
      * Space Complexity :-
