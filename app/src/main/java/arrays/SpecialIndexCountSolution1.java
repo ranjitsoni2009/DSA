@@ -40,13 +40,14 @@ public class SpecialIndexCountSolution1 {
     public int getSpecialIndexCount(ArrayList<Integer> arrayList) {
         int specialIndexCount = 0;
         for (int index = 0; index < arrayList.size(); ++index) {
-            int sumOfEvenIndexBeforeSpecialIndex = getEvenIndexSum(index-1, arrayList);
-            int sumOfEvenIndexAfterSpecialIndex = getOddIndexSum(index+1, arrayList.size()-1 ,arrayList);
-            int sumOfOddIndexBeforeSpecialIndex = getEvenIndexSum(index-1, arrayList);
-            int sumOfOddIndexAfterSpecialIndex = getOddIndexSum(index+1, arrayList.size()-1 ,arrayList);
+            int sumOfEvenIndexBeforeSpecialIndex = getEvenIndexSum(0, index-1, arrayList);
+            int sumOfOddIndexAfterSpecialIndex = getOddIndexSum(index+1, arrayList.size()-1, arrayList);
 
-            int sumOfEvenIndex = sumOfEvenIndexBeforeSpecialIndex + sumOfEvenIndexAfterSpecialIndex;
-            int sumOfOddIndex = sumOfOddIndexBeforeSpecialIndex + sumOfOddIndexAfterSpecialIndex;
+            int sumOfOddIndexBeforeSpecialIndex = getOddIndexSum(0, index-1, arrayList);
+            int sumOfEvenIndexAfterSpecialIndex = getEvenIndexSum(index+1, arrayList.size()-1, arrayList);
+
+            int sumOfEvenIndex = sumOfEvenIndexBeforeSpecialIndex + sumOfOddIndexAfterSpecialIndex;
+            int sumOfOddIndex = sumOfOddIndexBeforeSpecialIndex + sumOfEvenIndexAfterSpecialIndex;
             if (sumOfEvenIndex == sumOfOddIndex) {
                 ++specialIndexCount;
             }
@@ -54,13 +55,11 @@ public class SpecialIndexCountSolution1 {
         return specialIndexCount;
     }
 
-    private int getEvenIndexSum(int endIndex, ArrayList<Integer> arrayList) {
+    private int getEvenIndexSum(int startIndex, int endIndex, ArrayList<Integer> arrayList) {
         int sum = 0;
-        if (0 <= endIndex) {
-            for (int index = 0; index <= endIndex; ++index) {
-                if (index % 2 == 0) {
-                    sum += arrayList.get(index);
-                }
+        for (int index = startIndex; index <= endIndex; ++index) {
+            if (index % 2 == 0) {
+                sum += arrayList.get(index);
             }
         }
         return sum;
@@ -68,11 +67,9 @@ public class SpecialIndexCountSolution1 {
 
     private int getOddIndexSum(int startIndex, int endIndex, ArrayList<Integer> arrayList) {
         int sum = 0;
-        if (startIndex <= endIndex) {
-            for (int index = startIndex; index <= endIndex; ++index) {
-                if (index % 2 != 0) {
-                    sum += arrayList.get(index);
-                }
+        for (int index = startIndex; index <= endIndex; ++index) {
+            if (index % 2 != 0) {
+                sum += arrayList.get(index);
             }
         }
         return sum;

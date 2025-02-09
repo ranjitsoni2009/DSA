@@ -51,7 +51,7 @@ public class FindMinMaxInMinLengthSubArray {
                 max = j;
             }
         }
-        int minLength = Integer.MAX_VALUE;
+        int minLength = array.length;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == min) {
                 if (latestMaxIndex != -1) {

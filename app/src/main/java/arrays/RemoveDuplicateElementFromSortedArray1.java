@@ -7,8 +7,8 @@ package arrays;
 public class RemoveDuplicateElementFromSortedArray1 {
 
     public int removeDuplicateElement(int[] nums) {
-        if (nums.length == 1) {
-            return 1;
+        if (nums.length == 1 || nums.length == 0) {
+            return nums.length;
         }
 
         if (nums[0] == nums[nums.length-1]) {

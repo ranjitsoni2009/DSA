@@ -36,7 +36,15 @@ class SpecialIndexCountSolution1Test {
     void testGetSpecialIndexCount_evenNumberOfElements() {
         SpecialIndexCountSolution1 solution = new SpecialIndexCountSolution1();
         ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(1, 2, 1, 2));
-        int expected = 2;
+        int expected = 1;
+        assertEquals(expected, solution.getSpecialIndexCount(arrayList));
+    }
+
+    @Test
+    void testGetSpecialIndexCount_randomElements() {
+        SpecialIndexCountSolution1 solution = new SpecialIndexCountSolution1();
+        ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(2, 5, 1, 7, 9, 6, 8));
+        int expected = 1;
         assertEquals(expected, solution.getSpecialIndexCount(arrayList));
     }
 
